@@ -10,6 +10,9 @@ class Category(models.Model):
     slug = models.SlugField(unique=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.name
+
     class Mate:
         ordering = ('name',)
 
@@ -27,6 +30,9 @@ class Product(models.Model):
     description = models.TextField(blank=True)
     slug = models.SlugField(unique=True, blank=True)
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.name
 
     class Mate:
         ordering = ('name',)
