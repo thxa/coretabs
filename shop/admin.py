@@ -27,8 +27,8 @@ class ProductAdmin(admin.ModelAdmin):
 	
 	def make_price_discount_20(modelsadmin, request, queryset):
 		for product in queryset:
-			result = product.price * 20 / 100 
-		queryset.update(price= result)
+			result = product.price * 80 / 100
+			queryset.update(price=result)
 	make_price_discount_20.short_description = "Make price discount 20"
 
 admin.site.register(models.Product, ProductAdmin)
