@@ -1,0 +1,9 @@
+{% extends 'shop/base.html' %}
+{% block content %}
+<h2>{{ category }}</h2>
+<ul>
+    {% for product in category.products.all %}
+    <li><a href="{{ product.get_absolute_url }}">{{product}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
