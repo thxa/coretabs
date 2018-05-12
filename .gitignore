@@ -102,3 +102,6 @@ ENV/
 
 #sqllite
 #db.sqlite3
+
+#Pycharm
+.idea
